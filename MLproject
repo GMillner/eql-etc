@@ -1,0 +1,11 @@
+name: EQL
+
+conda_env: conda.yml
+
+entry_points:
+  main:
+    parameters:
+      runtime_params: dict
+
+	  
+	command: "python train.py --runtime_params {runtime_params}"
