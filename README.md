@@ -11,7 +11,7 @@ London-Dispersion corrections in theoretical molecular physics." [2], where the 
 
 [1] https://al.is.tuebingen.mpg.de/publications/sahoolampertmartius2018-eqldiv
 
-[2] 
+[2] https://sandbox.zenodo.org/record/711196
 
 # Dependencies
 
