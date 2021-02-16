@@ -2,24 +2,25 @@ import os
 lib_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..')
 
 __author__ = "Gerfried Millner"
-__version__ = "0.2.0"
-__date__ = "30.03.2020"
+__version__ = "0.2.1"
+__date__ = "16.02.2021"
 __email__ = "g.millner@gmx.at" 
 __status__ = "Development"
 
 
 default_params = {
-   'model_base_dir': os.path.join(lib_path, 'models', 'F1_test'),
-   'id': 2,  # job_id to identify jobs in result metrics file, separate model_dir for each id
+   'model_base_dir': os.path.join(lib_path, 'models', 'Reg_test'),
+   'id': 10,  # job_id to identify jobs in result metrics file, separate model_dir for each id
    'train_val_file': lib_path + r'\data\example_data\F1data_train_val',  
-   'test_file': None,
+   'test_file': lib_path + r'\data\example_data\F1data_test',
    'epoch_factor': 1000,  # max_epochs = epoch_factor * num_h_layers
    'num_h_layers': 1,  # number of hidden layers used in network
-   'generate_symbolic_expr': True,  # saves final network as a latex png and symbolic graph
+   'generate_symbolic_expr': False,  # saves final network as a latex png and symbolic graph - can cause run to fail
    'kill_summaries': True,  # reduces data generation, recommended when creating many jobs
    'monitor_complexity': True,
    'reg_percent': 0.01, # percentage of loss_train at reg_start
-   'reg_start': 2, # starting point of the regularization in training episodes = penalty_every + 1 epochs
+   #'reg_start': 2, # starting point of the regularization in training episodes = penalty_every + 1 epochs
+   'reg_sched': (.25, .95),
    }
 
 
@@ -40,4 +41,5 @@ network_parameters = {'train_val_split': .9,  # how data in train_val_file is sp
                       # from extrapolation_data (if provided) or training/validation data
                       'network_init_seed': None,  # seed for initializing weights in network
                       }
+
 
